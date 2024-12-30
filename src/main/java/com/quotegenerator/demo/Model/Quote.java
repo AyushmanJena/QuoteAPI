@@ -5,6 +5,8 @@ public class Quote {
     private String content;
     private String[] tags;
 
+    private String encodedImage;
+
     public Quote(String author, String content, String[] tags) {
         this.author = author;
         this.content = content;
@@ -33,5 +35,13 @@ public class Quote {
 
     public void setTags(String[] tags) {
         this.tags = tags;
+    }
+
+    public String getEncodedImage() {
+        return encodedImage;
+    }
+
+    public void setEncodedImage(String encodedImage) {
+        this.encodedImage = encodedImage;
     }
 }

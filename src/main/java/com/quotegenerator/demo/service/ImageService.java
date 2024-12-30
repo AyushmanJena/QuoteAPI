@@ -17,7 +17,7 @@ import java.io.IOException;
 public class ImageService{
 
     public void writeToImage(String quote, String author){
-         System.out.println("started image processing");
+         //System.out.println("started image processing");
 
         try{
             final BufferedImage image = ImageIO.read(new File("src/main/resources/static/test.png"));
@@ -37,12 +37,12 @@ public class ImageService{
             g.drawString("- "+author, authorx, y+100 );
             g.dispose();
             ImageIO.write(image, "png", new File("src/main/java/com/quotegenerator/demo/storage/quote.png"));
-            System.out.println("written to image");
+            //System.out.println("written to image");
         }
         catch(Exception e){
             System.out.println("didn't work");
         }
-        System.out.println("completed image processing");
+        //System.out.println("completed image processing");
     }
 
     public ResponseEntity<InputStreamResource> downloadImage() throws IOException {
