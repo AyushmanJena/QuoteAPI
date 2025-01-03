@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method="POST" th:object = "${email}" th:action = "@{/mail/processEmailForm}">
+    Enter Your Email : <br>
+    <input type = "text" id = "email" name = "email" th:field = "*{email}"/>
+    <input type = "submit" value = "SUBMIT"/>
+</form>
+
+</body>
+</html>

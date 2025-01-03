@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Email confirmation</title>
+</head>
+<body>
+
+<span th:if="${sent}">Email Sent</span>
+<span th:unless="${sent}">Error : Can't send email</span>
+<br><br>
+<a href="/">Home</a>
+
+</body>
+</html>

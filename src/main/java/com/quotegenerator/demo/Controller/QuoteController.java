@@ -4,26 +4,20 @@ import com.quotegenerator.demo.Model.Quote;
 import com.quotegenerator.demo.service.ImageService;
 import com.quotegenerator.demo.service.QuoteService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ByteArrayResource;
-import org.springframework.core.io.InputStreamResource;
-import org.springframework.core.io.Resource;
 import java.util.Base64;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 
 @RestController
+@RequestMapping("/api")
 public class QuoteController {
 
     @Autowired
@@ -32,10 +26,6 @@ public class QuoteController {
     @Autowired
     public ImageService imageService;
 
-    @GetMapping("/")
-    public String index(){
-        return "use \"/randomquote\" for a random quote      \"/allquotes\" for the list of quotes   \"/get-image\" to get the image    \"/image-quote\" to download a quote as image";
-    }
     @GetMapping("/allquotes")
     public ArrayList<Quote> allQuotes(){
         ArrayList<Quote> quotes = quoteService.createQuotesList();
@@ -98,4 +88,5 @@ public class QuoteController {
                 .status(HttpStatus.OK)
                 .body(randomQuote);
     }
+
 }
