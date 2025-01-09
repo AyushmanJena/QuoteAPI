@@ -54,7 +54,6 @@ public class QuoteController {
         imageService.writeToImage(quote, author);
 
         return imageService.downloadImage();
-//        return "Image written.";
     }
 
     @GetMapping("/get-image")
